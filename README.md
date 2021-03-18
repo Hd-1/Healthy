@@ -5,7 +5,7 @@ Healthy is a Project based on well-being.
 # Goal
 
 Healthy will be a sport app. Where you can find different sports programm for free as well as cooking recipes.
-The user need to create an account. One he creat his account, he can navigate throught the different sports programs and recipes.
+The user need to create an account. Once he creat his account, he can navigate throught the different sports programs and recipes.
 It will be one section for sports programs and one section for recipes. For each sports programs, it will be recommended dishes, and for each recipes, it will be recommended sports programms.
 User can add to favorites the program or the dishe he wants.
 It will be a stat section, where users can see how many times they did each programm.
