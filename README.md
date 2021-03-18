@@ -27,6 +27,7 @@ User can place the programm anywhere he wants in the schedule.
 * My Sport Room section where user can put sports equipments he already has.
 ### Could Have
 * Comments & Feedbacks on programms and recipes.
+* Add friends.
 * Compare stats with friends.
 ### Won't Have
 * Chat & Messagery features
