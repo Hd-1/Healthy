@@ -1,4 +1,4 @@
-package view;
+package viewConnection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import bottomMenu.Home;
+
 
 public class Start extends AppCompatActivity {
 
@@ -19,12 +21,12 @@ public class Start extends AppCompatActivity {
         Button logInBtn,signInBtn ;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_first);
 
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), Home.class));
             finish();
         }
 

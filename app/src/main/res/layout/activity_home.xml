@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bottomMenu.Start">
+    tools:context="bottomMenu.Home">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:text="Home"
         android:textSize="50sp"
         android:layout_centerInParent="true"/>
 
@@ -21,5 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu" />
+
 
 </RelativeLayout>

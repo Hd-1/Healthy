@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/notificationsPage">
+    <fragment
+        android:id="@+id/notificationsPage"
+        android:name="bottomMenu.NotificationsFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/homePage"
+        android:name="bottomMenu.HomeFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/startPage"
+        android:name="bottomMenu.StartFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_start" />
+</navigation>
