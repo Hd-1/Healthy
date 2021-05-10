@@ -16,7 +16,7 @@ import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import bottomMenuController.Home;
-import connectionController.Login;
+import connectionController.First;
 
 public class Statistics extends AppCompatActivity {
 
@@ -89,7 +89,7 @@ public class Statistics extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), First.class));
                 Toast.makeText(Statistics.this, "Sign Out Successful", Toast.LENGTH_SHORT).show();
             }
         });
