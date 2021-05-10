@@ -11,24 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Healthy">
-        <activity android:name="bottomMenu.Start"></activity>
-        <activity android:name="bottomMenu.Notifications" />
-        <activity android:name="viewConnection.Start">
+        <activity android:name="drawerMenuController.Settings"></activity>
+        <activity android:name="drawerMenuController.Favorite" />
+        <activity android:name="drawerMenuController.Fridge" />
+        <activity android:name="drawerMenuController.Statistics" />
+        <activity android:name="drawerMenuController.Profile" />
+        <activity android:name="bottomMenuController.Start" />
+        <activity android:name="bottomMenuController.Notifications" />
+        <activity android:name="connectionController.First">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="viewConnection.Login">
+        <activity android:name="connectionController.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="viewConnection.Register" />
-        <activity android:name="bottomMenu.Home">
+        <activity android:name="connectionController.Register" />
+        <activity android:name="bottomMenuController.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

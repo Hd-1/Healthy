@@ -6,17 +6,17 @@
     app:startDestination="@id/notificationsPage">
     <fragment
         android:id="@+id/notificationsPage"
-        android:name="bottomMenu.NotificationsFragment"
+        android:name="bottomMenuController.NotificationsFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/homePage"
-        android:name="bottomMenu.HomeFragment"
+        android:name="bottomMenuController.HomeFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/startPage"
-        android:name="bottomMenu.StartFragment"
+        android:name="bottomMenuController.StartFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_start" />
 </navigation>

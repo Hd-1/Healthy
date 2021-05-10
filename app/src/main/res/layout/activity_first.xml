@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="viewConnection.Start">
+    tools:context="connectionController.First">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -27,7 +27,7 @@
         android:layout_marginTop="48dp"
         android:onClick="signIn"
         android:text="Sign In"
-        app:backgroundTint="#F44336"
+        app:backgroundTint="@color/secondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInBtn" />
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="372dp"
         android:onClick="logIn"
         android:text="Log In"
-        app:backgroundTint="#FFE91E1E"
+        app:backgroundTint="@color/primary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

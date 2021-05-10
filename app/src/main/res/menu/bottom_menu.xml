@@ -4,13 +4,19 @@
     <item
         android:id="@+id/notificationsPage"
         android:icon="@drawable/ic_notifications"
+        android:color="@color/white"
+        android:state_checked="false"
         android:title="Notifications" />
     <item
         android:id="@+id/homePage"
         android:icon="@drawable/ic_home"
+        android:color="@color/black"
+        android:state_checked="true"
         android:title="Home" />
     <item
         android:id="@+id/startPage"
         android:icon="@drawable/ic_start"
+        android:color="@color/white"
+        android:state_checked="false"
         android:title="Start" />
 </menu>

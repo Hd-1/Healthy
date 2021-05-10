@@ -1,4 +1,4 @@
-package viewConnection;
+package connectionController;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,36 +10,31 @@ import android.widget.Button;
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-import bottomMenu.Home;
+import bottomMenuController.Home;
 
 
-public class Start extends AppCompatActivity {
+public class First extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseAuth fAuth;
-        Button logInBtn,signInBtn ;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+    }
 
-        fAuth = FirebaseAuth.getInstance();
-
-        if(fAuth.getCurrentUser() != null){
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), Home.class));
-            finish();
         }
-
     }
 
     public void logIn(View v){
         startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
     }
 
     public void signIn(View v){
         startActivity(new Intent(getApplicationContext(),Register.class));
-        finish();
     }
 
 }

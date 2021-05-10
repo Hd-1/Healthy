@@ -1,4 +1,4 @@
-package viewConnection;
+package connectionController;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +18,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import bottomMenu.Home;
+import bottomMenuController.Home;
 
 public class Register extends AppCompatActivity {
     EditText registerFullName,registerEmail,registerPassword,registerConfPass;
-    Button registerBtn;
-    TextView loginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
 
@@ -39,16 +37,19 @@ public class Register extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
+    }
 
-        if (fAuth.getCurrentUser() != null) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), Home.class));
-            finish();
         }
     }
 
+
     public void registerToLogin(View v){
         startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
     }
 
     public void register(View v) {
@@ -58,27 +59,22 @@ public class Register extends AppCompatActivity {
 
         if (email.isEmpty()) {
             registerEmail.setError("Email is Required");
-            return;
         }
 
         if (password.isEmpty()) {
             registerPassword.setError("Password is Required");
-            return;
         }
 
         if (confPass.isEmpty()) {
             registerConfPass.setError("Retype Password");
-            return;
         }
 
         if (password.length() < 6) {
             registerPassword.setError("Password must be greater than 6 Characters");
-            return;
         }
 
         if (!password.equals(confPass)) {
             registerPassword.setError("Password do not Match");
-            return;
         }
 
         progressBar.setVisibility(View.VISIBLE);

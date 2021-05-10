@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="viewConnection.Register">
+    tools:context="connectionController.Register">
 
 
     <ImageView
@@ -81,7 +81,7 @@
         android:layout_marginTop="16dp"
         android:onClick="register"
         android:text="@string/register"
-        app:backgroundTint="#FFE91E1E"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerPassword2" />
@@ -93,7 +93,7 @@
         android:layout_marginTop="16dp"
         android:onClick="registerToLogin"
         android:text="@string/register_to_login"
-        app:backgroundTint="#F44336"
+        app:backgroundTint="@color/secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
