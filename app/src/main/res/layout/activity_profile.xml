@@ -5,22 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="drawerMenuController.Profile"
+    android:orientation="vertical"
     android:id="@+id/drawerLayout">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/drawer"/>
+        <include layout="@layout/drawer"/>
 
-        <TextView
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Profile"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+            android:layout_height="300dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name name"
+                android:textSize="30sp"
+                android:layout_marginTop="50dp"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profile_image" />
+
+        </RelativeLayout>
+
+
     </LinearLayout>
 
     <RelativeLayout
@@ -28,9 +45,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start">
 
-        <include
-            layout="@layout/nav_drawer_profile"/>
+        <include layout="@layout/nav_drawer_profile"/>
 
     </RelativeLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

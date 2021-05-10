@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="494dp"
             android:gravity="center"
-            android:text="Notifications"
+            android:text="@string/notifications"
             android:textSize="50sp"
             android:textStyle="bold" />
 

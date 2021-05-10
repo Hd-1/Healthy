@@ -1,10 +1,16 @@
 package bottomMenuController;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,8 +21,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.healthy.R;
+import com.example.healthy.dishes;
+import com.example.healthy.training;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 import connectionController.Login;
 import drawerMenuController.Favorite;
@@ -27,17 +38,32 @@ import drawerMenuController.Statistics;
 
 public class Start extends AppCompatActivity {
 
+    //Initialize variable
     DrawerLayout drawerLayout;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    MainAdapter adapter;
 
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        //Tab Layout
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.viewPager);
+        adapter = new MainAdapter(getSupportFragmentManager());
+        adapter.AddFragment(new training(),"training");
+        adapter.AddFragment(new dishes(), "dishes");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         //Drawer Layout
         drawerLayout = findViewById(R.id.drawerLayout);
 
+        //Bottom Navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setSelectedItemId(R.id.startPage);
@@ -138,5 +164,39 @@ public class Start extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         closeDrawer(drawerLayout);
+    }
+
+
+    private class MainAdapter extends FragmentPagerAdapter {
+        //Initialize ArrayList
+        ArrayList<Fragment> fragmentsArrayList = new ArrayList<>();
+        ArrayList<String> stringArrayList = new ArrayList<>();
+
+        //Constructor
+        public void AddFragment(Fragment f, String s){
+            fragmentsArrayList.add(f);
+            stringArrayList.add(s);
+        }
+
+        public MainAdapter(@NonNull FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentsArrayList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentsArrayList.size();
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return  stringArrayList.get(position);
+        }
     }
 }

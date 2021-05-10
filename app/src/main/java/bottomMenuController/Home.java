@@ -39,12 +39,10 @@ public class Home extends AppCompatActivity {
         //Drawer Layout
         drawerLayout = findViewById(R.id.drawerLayout);
 
-
         //Bottom Navigation
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.homePage);
 
-        //Bottom Navigation
+        bottomNavigationView.setSelectedItemId(R.id.homePage);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -66,17 +64,11 @@ public class Home extends AppCompatActivity {
     }
 
     //Drawer Layout
-    public void clickMenuDrawer(View v){
-        openDrawer(drawerLayout);
-    }
+    public void clickMenuDrawer(View v){ openDrawer(drawerLayout); }
 
-    public static void openDrawer(DrawerLayout drawerLayout) {
-        drawerLayout.openDrawer(GravityCompat.START);
-    }
+    public static void openDrawer(DrawerLayout drawerLayout) { drawerLayout.openDrawer(GravityCompat.START); }
 
-    public void navDrawerClickLogo(View v){
-        closeDrawer(drawerLayout);
-    }
+    public void navDrawerClickLogo(View v){closeDrawer(drawerLayout); }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -92,29 +84,17 @@ public class Home extends AppCompatActivity {
 
     public void navDrawerClickHome(View v){redirectActivity(this, Home.class);}
 
-    public void navDrawerClickProfile(View v){
-        redirectActivity(this, Profile.class);
-    }
+    public void navDrawerClickProfile(View v){redirectActivity(this, Profile.class); }
 
-    public void navDrawerClickStatistics(View v){
-        redirectActivity(this, Statistics.class);
-    }
+    public void navDrawerClickStatistics(View v){redirectActivity(this, Statistics.class); }
 
-    public void navDrawerClickFridge(View v){
-        redirectActivity(this, Fridge.class);
-    }
+    public void navDrawerClickFridge(View v){ redirectActivity(this, Fridge.class); }
 
-    public void navDrawerClickFavorite(View v){
-        redirectActivity(this, Favorite.class);
-    }
+    public void navDrawerClickFavorite(View v){ redirectActivity(this, Favorite.class); }
 
-    public void navDrawerClickSettings(View v){
-        redirectActivity(this, Settings.class);
-    }
+    public void navDrawerClickSettings(View v){ redirectActivity(this, Settings.class); }
 
-    public void navDrawerClickLogOut(View v){
-        logout(this);
-    }
+    public void navDrawerClickLogOut(View v){logout(this); }
 
     private void logout(Activity a) {
         AlertDialog.Builder builder = new AlertDialog.Builder(a);

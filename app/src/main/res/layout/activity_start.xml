@@ -5,23 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="drawerMenuController.Profile"
-    android:id="@+id/drawerLayout">
+    android:id="@+id/drawerLayout"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/drawer"/>
+        <include layout="@layout/drawer"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="573dp"
-            android:gravity="center"
-            android:text="Start"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+        <include
+            layout="@layout/tab_layout"
+            android:layout_height="600dp"
+            android:layout_width="match_parent" />
 
         <include layout="@layout/bottom_nav" />
 
