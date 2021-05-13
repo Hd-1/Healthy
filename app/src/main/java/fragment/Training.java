@@ -1,4 +1,4 @@
-package com.example.healthy;
+package fragment;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.healthy.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link training#newInstance} factory method to
+ * Use the {@link Training#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class training extends Fragment {
+public class Training extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class training extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public training() {
+    public Training() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class training extends Fragment {
      * @return A new instance of fragment training.
      */
     // TODO: Rename and change types and number of parameters
-    public static training newInstance(String param1, String param2) {
-        training fragment = new training();
+    public static Training newInstance(String param1, String param2) {
+        Training fragment = new Training();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

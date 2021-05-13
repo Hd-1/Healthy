@@ -1,4 +1,4 @@
-package com.example.healthy;
+package fragment;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.healthy.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link dishes#newInstance} factory method to
+ * Use the {@link Dishes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class dishes extends Fragment {
+public class Dishes extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class dishes extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public dishes() {
+    public Dishes() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class dishes extends Fragment {
      * @return A new instance of fragment dishes.
      */
     // TODO: Rename and change types and number of parameters
-    public static dishes newInstance(String param1, String param2) {
-        dishes fragment = new dishes();
+    public static Dishes newInstance(String param1, String param2) {
+        Dishes fragment = new Dishes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

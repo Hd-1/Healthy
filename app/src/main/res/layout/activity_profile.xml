@@ -20,6 +20,12 @@
             android:layout_height="300dp"
             android:padding="20dp">
 
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profile_image" />
+
             <TextView
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
@@ -29,13 +35,24 @@
                 android:layout_marginTop="50dp"
                 android:layout_centerVertical="true"/>
 
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/profile_image" />
+            <TextView
+                android:id="@+id/profileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileName"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="50dp"
+                android:text="Email"
+                android:textSize="30sp" />
+
 
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

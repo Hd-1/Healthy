@@ -21,8 +21,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.healthy.R;
-import com.example.healthy.dishes;
-import com.example.healthy.training;
+import fragment.Dishes;
+import fragment.Training;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -55,8 +55,8 @@ public class Start extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewPager);
         adapter = new MainAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new training(),"training");
-        adapter.AddFragment(new dishes(), "dishes");
+        adapter.AddFragment(new Training(),"training");
+        adapter.AddFragment(new Dishes(), "dishes");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 

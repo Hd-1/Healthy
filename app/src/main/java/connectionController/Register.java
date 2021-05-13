@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import bottomMenuController.Home;
 
@@ -53,9 +55,14 @@ public class Register extends AppCompatActivity {
     }
 
     public void register(View v) {
+        String fullName = registerFullName.getText().toString().trim();
         String email = registerEmail.getText().toString().trim();
         String password = registerPassword.getText().toString().trim();
         String confPass = registerConfPass.getText().toString().trim();
+
+        if (fullName.isEmpty()) {
+            registerFullName.setError("Full Name is Required");
+        }
 
         if (email.isEmpty()) {
             registerEmail.setError("Email is Required");
@@ -79,11 +86,13 @@ public class Register extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
 
-
         fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(fullName).build();
+                    user.updateProfile(profileUpdates);
                     Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), Home.class));
                 } else {
