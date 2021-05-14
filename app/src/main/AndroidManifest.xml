@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Healthy">
-        <activity android:name="drawerMenuController.Settings"></activity>
+        <activity android:name="activity.TrainingActivity"></activity>
+        <activity android:name="drawerMenuController.Settings" />
         <activity android:name="drawerMenuController.Favorite" />
         <activity android:name="drawerMenuController.Fridge" />
         <activity android:name="drawerMenuController.Statistics" />
