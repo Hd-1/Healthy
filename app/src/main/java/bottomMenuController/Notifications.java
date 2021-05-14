@@ -33,6 +33,7 @@ public class Notifications extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
+        getSupportActionBar().hide();
 
         //Drawer Layout
         drawerLayout = findViewById(R.id.drawerLayout);

@@ -1,5 +1,6 @@
 package fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,10 +15,11 @@ import com.example.healthy.R;
 
 import java.util.ArrayList;
 
+import activity.DishesActivity;
 import adapterRecyclerView.AdapterDishes;
 import data.Dishes;
 
-public class DishesFragment extends Fragment {
+public class DishesFragment extends Fragment  implements AdapterDishes.onDishesListener{
 
     View dishesView;
     RecyclerView dishesList;
@@ -28,34 +30,40 @@ public class DishesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        dishesView = inflater.inflate(R.layout.fragment_dishes, container, false);
 
-            dishesView = inflater.inflate(R.layout.fragment_dishes, container, false);
+        dishesList = dishesView.findViewById(R.id.dishesList);
+        dishesList.hasFixedSize();
+        dishesList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            dishesList = dishesView.findViewById(R.id.dishesList);
-            dishesList.hasFixedSize();
-            dishesList.setLayoutManager(new LinearLayoutManager(getContext()));
+        addDishes();
 
-            addDishes();
+        adapterDishes = new AdapterDishes(dishes,this);
+        dishesList.setAdapter(adapterDishes);
 
-        adapterDishes = new AdapterDishes(dishes);
-            dishesList.setAdapter(adapterDishes);
+        return dishesView;
+}
 
-            return dishesView;
-        }
+    public void addDishes(){
+        dishes.add(new Dishes("First"));
+        dishes.add(new Dishes("Second"));
+        dishes.add(new Dishes("Third"));
+        dishes.add(new Dishes("First"));
+        dishes.add(new Dishes("Second"));
+        dishes.add(new Dishes("Third"));
+        dishes.add(new Dishes("First"));
+        dishes.add(new Dishes("Second"));
+        dishes.add(new Dishes("Third"));
+        dishes.add(new Dishes("First"));
+        dishes.add(new Dishes("Second"));
+        dishes.add(new Dishes("Third"));
+    }
 
-        public void addDishes(){
-            dishes.add(new Dishes("First"));
-            dishes.add(new Dishes("Second"));
-            dishes.add(new Dishes("Third"));
-            dishes.add(new Dishes("First"));
-            dishes.add(new Dishes("Second"));
-            dishes.add(new Dishes("Third"));
-            dishes.add(new Dishes("First"));
-            dishes.add(new Dishes("Second"));
-            dishes.add(new Dishes("Third"));
-            dishes.add(new Dishes("First"));
-            dishes.add(new Dishes("Second"));
-            dishes.add(new Dishes("Third"));
-        }
-
+    @Override
+    public void onDishesClick(int position) {
+        dishes.get(position);
+        Intent intent = new Intent(getContext(), DishesActivity.class);
+        intent.putExtra("dishesTitle",dishes.get(position).getTitle());
+        startActivity(intent);
+    }
 }

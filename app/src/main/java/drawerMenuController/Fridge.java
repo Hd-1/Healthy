@@ -26,6 +26,7 @@ public class Fridge extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
+        getSupportActionBar().hide();
 
         drawerLayout = findViewById(R.id.drawerLayout);
     }

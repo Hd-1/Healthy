@@ -25,6 +25,7 @@ public class First extends AppCompatActivity {
         super.onStart();
         if(FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), Home.class));
+            getSupportActionBar().hide();
         }
     }
 

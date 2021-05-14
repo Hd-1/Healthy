@@ -1,6 +1,5 @@
 package adapterRecyclerView;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import data.Training;
 public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHolder> {
 
     ArrayList<Training> listTraining;
-    private onTrainingListener mOnTrainingListener;
+    final onTrainingListener mOnTrainingListener;
 
     public AdapterTraining(ArrayList<Training> listTraining, onTrainingListener onTrainingListener) {
         this.listTraining = listTraining;

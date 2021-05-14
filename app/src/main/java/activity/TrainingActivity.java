@@ -27,5 +27,6 @@ public class TrainingActivity extends AppCompatActivity {
         }
 
         mTrainingTitle.setText(trainingTitle);
+        getSupportActionBar().setTitle(trainingTitle);
     }
 }
