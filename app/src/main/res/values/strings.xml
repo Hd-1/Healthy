@@ -26,4 +26,225 @@
     <string name="warning">Warning</string>
     <string name="step">Step</string>
     <string name="challenge">Challenge</string>
+    <string name="directions">Directions :</string>
+    <string name="nutrition_facts">Nutrition Facts :</string>
+    <string name="ingredients">Ingredients :</string>
+    <string name="directionsValue">directions</string>
+    <string name="nutrition_factsValue">Nutrition Facts</string>
+    <string name="ingredientsValue">ingredients</string>
+
+    <!--                      TRAINING CONTENT                      -->
+    <string name="description0">You squat every time you sit or stand, but don’t take this exercise for granted. It works your legs and your glutes, the most powerful muscle group in the body.</string>
+    <string name="description1">There’s a reason push-ups are a go-to exercise for body builders. They effectively work the muscles in your shoulders and chest.</string>
+    <string name="description2">This exercise mimics the motion climbers make as they climb steep peaks, except it’s done on the soft, flat surface of your floor. Mountain climbers are total body workouts, building strength in your core, back, arms and legs — not to mention your heart.</string>
+    <string name="description3">A commonly seen exercise, plank helps build strength in the core, shoulders, arms and legs. Plank tones your abs and builds strength in your upper body. Additionally, planks strengthen both the abdominal and low back muscles simultaneously and can have a beneficial effect for people with low back pain.</string>
+    <string name="description4">This variation on a squat really targets (the quadricep and hamstring muscles in your legs as well as the glutes. Jumping into your starting position from the lowest point in your squat also adds a plyometric boost.</string>
+    <string name="description5">This exercise is adapted from yoga and targets the muscles in your glutes and abs.</string>
+    <string name="description6">Fun to say, but also great for your body, this total body exercise will get your heart pumping fast, but don’t sacrifice form for speed. Keep your body in control as you move through the exercise.</string>
+    <string name="description7">This exercise is a great way to tone your lower body. It helps to improve balance, while also targeting your hamstrings.</string>
+    <string name="description8">Build your core strength without getting off the floor. The legs down exercise is great for lower back pain, but be sure move your legs in a controlled manner throughout the exercise.</string>
+
+    <string name="warning0"><b>Be careful:</b> Done incorrectly, squats can be hard on your knees. As you squat, keep your butt pushed out, like you are about to sit on a chair. Use the muscles in your hips and thighs to push yourself up; don’t press your knees forward as you move. If you’re doing it correctly, your knees will move only during the first half of the squat; your hips will finish the movement.</string>
+    <string name="warning1"><b>Modify it:</b> If standard push-ups are too challenging, try them with your knees on the floor. That will reduce the amount of weight you need to lift.</string>
+    <string name="warning2"><b>Modify it:</b> If this exercise puts too much strain on your wrists, try elevating your upper body by placing your hands on a step to reduce the weight being placed on your arms.</string>
+    <string name="warning3"><b>Be careful:</b> Plank pose can be hard on your wrists, which is why we suggest doing a plank on your forearm.</string>
+    <string name="warning4"><b>Be careful:</b> If balance is an issue, you can do this exercise close to a wall, resting your hand on it for support.</string>
+    <string name="warning5"><b>Be careful:</b> Keep your foot firmly planted on the floor as you do this exercise.</string>
+    <string name="warning6"><b>Be careful:</b> If you do burpees too quickly, you will soon be gasping for breath. Try to pace yourself and your breathing. Take an in breath before you squat and breathe out during the push-up.</string>
+    <string name="warning7"><b>Be careful:</b> If you have balance issues, do this exercise near a wall that you can hang onto for support if you need to.</string>
+    <string name="warning8"><b>Be careful:</b> As you raise your legs, press your lower back into the floor and engage your ab muscles. This will ensure that your core is doing most of the work, not your hips.</string>
+
+    <string name="challenge0">Challenge yourself: You can add some plyometric motion to a squat by jumping from the lowest position back into your starting stance.</string>
+    <string name="challenge1">Challenge yourself: If basic push-ups are too easy, place your feet on a step or block to increase the intensity.</string>
+    <string name="challenge2"> </string>
+    <string name="challenge3"><b>Modify it:</b> Place your knees on the floor as you do plank to reduce the weight resting on your forearms.</string>
+    <string name="challenge4"><b>Modify it:</b> Omit the plyometric jump if you find this exercise too hard on your knees.\n
+                \n
+                Challenge yourself: Jump higher to really get your heart pumping and build more strength.</string>
+    <string name="challenge5"><b>Challenge yourself:</b> Place your stable foot on a step or bench as you do this exercise to allow you to raise your hips even higher..</string>
+    <string name="challenge6">
+        <b>Modify it:</b> Add leg modifications to make this more difficult. Leg modifications can include putting the right leg into a 3 o’clock position and then bringing it back to center, then bringing the left leg to a 9 o’clock position and then bringing it back to center, and then doing a push-up. We call this the 3 o’clock 9 o’clock burpee.
+        \n
+        \n
+        <b>Challenge yourself:</b> To move faster through your burpees, start stretching your legs back before your hands hit the ground. Also don’t arch your back as you move, to allow your legs full range of motion.
+    </string>
+    <string name="challenge7"><b>Challenge Yourself:</b> To make this more difficult, put a little hop in your planted leg when you stand up. This turns this exercise from isokinetic to plyometric and increases the degree of difficulty.</string>
+    <string name="challenge8"> </string>
+
+    <string name="steps0">
+        STEPS:\n
+        1. Stand with your hands on the back of your head and your feet shoulder-width apart with your feet turned out slightly to open the hip joint.\n
+        2. Lower your body until your thighs are parallel to the floor. \n
+        3. Pause, then return to the starting position. \n
+        4. Repeat.\n
+        Note: Intensify this by jumping up explosively from each squat and allowing your feet to lift off the floor.\n
+    </string>
+    <string name="steps1">
+        STEPS:\n
+                \n
+                1. Get down on all fours, placing your hands slightly wider than your shoulders. \n
+                \n
+                2. Straighten your arms and legs. \n
+                \n
+                3. Lower your body until your chest nearly touches the floor. \n
+                \n
+                4. Pause, then push yourself back up. \n
+                \n
+                5. Repeat.
+    </string>
+    <string name="steps2">
+                STEPS:\n
+                \n
+                1. Put both hands and knees on the floor.\n
+                \n
+                2. Place your right foot near your right hand and extend your left leg behind you. \n
+                \n
+                3. In one smooth motion, switch your legs, keeping your arms in the same position. \n
+                \n
+                4. Switch your legs back and forth twice, such that your right leg is again close to your right hand.
+    </string>
+    <string name="steps3">
+        STEPS:\n
+                \n
+                1. Assume a push-up position but bend your arms at your elbows so your weight rests on your forearms. \n
+                \n
+                2. Tighten your abs, clench your glutes and keep your body straight from head to heels. \n
+                \n
+                3. Hold as long as you can.
+    </string>
+    <string name="steps4">
+        STEPS:\n
+                \n
+                1. Place your hands on your hips and take a step forward with your left leg, so your stance is staggered. \n
+                \n
+                2. Slowly lower your body as far as you can.\n
+                \n
+                3. When you’re as low as you can go, jump with enough force to propel both feet off the floor. \n
+                \n
+                4. Land with your right leg forward. \n
+                \n
+                5. Alternate back and forth for the allotted time. \n
+                \n
+                6. Once you get the hang of this move you can swing your arms in opposition to your legs as if you are running.
+    </string>
+    <string name="steps5">
+        STEPS:\n
+                \n
+                1. Lie on your back with your right knee bent and right foot flat on the floor. \n
+                \n
+                2. Raise your left leg so it’s in line with your right thigh. \n
+                \n
+                3. Push your hips up, keeping your left leg elevated. \n
+                \n
+                4. Pause and slowly return to the starting position. \n
+                \n
+                5. Switch legs and repeat.
+    </string>
+    <string name="steps6">
+        STEPS:\n
+                \n
+                1. Stand with your feet shoulder-width apart. \n
+                \n
+                2. Squat as deeply as you can and place your hands on the floor. Kick back into a push-up position. \n
+                \n
+                3. Do one push-up. \n
+                \n
+                4. Bring your legs back to a squat and jump up, throwing your hands above your head.\n
+                \n
+                5. Land and repeat.
+    </string>
+    <string name="steps7">
+        STEPS\n
+                \n
+                1. Stand on your right leg with your left leg slightly behind you, raised off the floor. \n
+                \n
+                2. Place your arms straight out to your sides at shoulder height. \n
+                \n
+                3. Bend your right leg at the knee and squat down to touch your left hand to the toe of your right foot, then come back up. Try to keep your leg in the air behind you the entire time.\n
+                \n
+                4. Repeat motion with your left leg.\n
+                \n
+                5. Repeat.
+    </string>
+    <string name="steps8">STEPS\n
+                \n
+                1. Lie on your back, legs straight and together. \n
+                \n
+                2. Keep your legs straight and lift them all the way up to the ceiling until your butt comes off the floor. \n
+                \n
+                3. Slowly lower your legs back down till they’re just above the floor. Hold for a moment.\n
+                \n
+                4. Raise your legs back up. Repeat.
+    </string>
+
+    <!--                      DISHES CONTENT                      -->
+    <string name="directions0">In a small bowl, combine the tuna, celery and onion. Combine the mayonnaise, parsley, lemon juice, tarragon, mustard and pepper. Stir into tuna mixture. If desired, serve on lettuce leaves.</string>
+
+    <string name="directions1">Place all ingredients in a blender; cover and process until blended. Serve immediately.</string>
+
+    <string name="directions2">
+        - In a small bowl, combine yogurt and banana. In a shallow bowl, whisk egg, milk, cinnamon and nutmeg. Dip both sides of each tortilla in egg mixture. In a skillet, heat butter over medium-high heat. Add tortilla; cook until golden brown, 1-2 minutes on each side.\n
+                2- Spoon yogurt mixture down center of tortillas; top with strawberries, blueberries and granola. Roll up each tortilla. If desired, top with additional yogurt, berries and granola.</string>
+
+    <string name="directions3">In a small saucepan, bring water and salt to a boil. Stir in oats; cook 5 minutes over medium heat, stirring occasionally. Transfer oatmeal to 2 bowls; in each bowl, stir half each peanut butter, honey, flaxseed, cinnamon and, if desired, apple. Serve immediately</string>
+    <string name="directions4">
+
+        1- In a large skillet, heat canola oil over medium-high heat. Add carrots, zucchini and mushrooms; cook and stir 3-5 minutes or until carrots are crisp-tender. Add bean sprouts, spinach, water, soy sauce and chili sauce; cook and stir just until spinach is wilted. Remove from heat; keep warm.\n
+                2- Place 2-3 in. of water in a large skillet with high sides. Bring to a boil; adjust heat to maintain a gentle simmer. Break cold eggs, 1 at a time, into a small bowl; holding bowl close to surface of water, slip egg into water.\n
+                3- Cook, uncovered, 3-5 minutes or until whites are completely set and yolks begin to thicken but are not hard. Using a slotted spoon, lift eggs out of water.\n
+                4- Serve rice in bowls; top with vegetables. Drizzle with sesame oil. Top each serving with a poached egg.</string>
+
+    <string name="directions5">In a large bowl, combine the first eight ingredients. Add the remaining ingredients; toss to coat.</string>
+
+    <string name="directions6">In a blender, combine all ingredients. Cover and process until blended. Pour into chilled glasses; serve immediately.</string>
+
+    <string name="directions7">
+        1- In a small saucepan, bring water to a boil. Add quinoa. Reduce heat; simmer, covered, 12-15 minutes or until liquid is absorbed. Remove from heat; fluff with a fork.\n
+                2- In a large bowl, mash black beans. Add 1 cup salsa, tortilla chips, taco seasoning and cooked quinoa; mix well. Shape into eight 1/4-in.-thick patties.\n
+                3- Grill, covered, over medium heat 5-6 minutes on each side or until heated through. Serve on buns with lettuce, tomato, onion and remaining salsa.\n
+                4- To bake patties: Preheat oven to 350°. Place patties on a baking sheet coated with cooking spray. Bake 25-30 minutes or until heated through, turning once.</string>
+
+    <string name="directions8">
+        In a large saucepan, bring water to a boil. Add quinoa. Reduce heat; simmer, covered, until liquid is absorbed, 12-15 minutes. Remove from heat; fluff with a fork. Transfer to a large bowl; cool completely.\n
+                Stir spinach, tomatoes, cucumber, peppers and green onions into quinoa. In a small bowl, whisk dressing ingredients until blended. Drizzle over quinoa mixture; toss to coat. Refrigerate until serving.</string>
+
+    <string name="directions9">
+        1- In a large cast-iron or other heavy skillet, heat the butter over low heat. Add sweet potatoes, garlic, 1/4 teaspoon salt and thyme; cook, covered, until potatoes are almost tender, 4-5 minutes, stirring occasionally. Stir in spinach just until wilted, 2-3 minutes.\n
+                2- With the back of a spoon, make 4 wells in potato mixture. Break an egg into each well. Sprinkle eggs with pepper and remaining salt. Cook, covered, on medium-low until egg whites are completely set and yolks begin to thicken but are not hard, 5-7 minutes.\n
+                \n\n
+                Test Kitchen tips :\n
+                •If you like your eggs sunny-side up, leave the pan uncovered while they cook.\n
+                •Break the eggs into a small dish before adding to the pan. It’s easier to remove stray shell pieces if they get into the egg.\n
+                \n
+                Health tip: With the sweet potatoes and spinach, this dish meets the daily requirement for vitamin A.</string>
+
+    <string name="nutrition0">2/3 cup: 151 calories, 7g fat (1g saturated fat), 38mg cholesterol, 373mg sodium, 4g carbohydrate (2g sugars, 1g fiber), 17g protein. Diabetic Exchanges: 2 lean meat, 1-1/2 fat.</string>
+
+    <string name="nutrition1">1 cup: 121 calories, 0 fat (0 saturated fat), 0 cholesterol, 22mg sodium, 29g carbohydrate (21g sugars, 2g fiber), 1g protein. Diabetic Exchanges: 1-1/2 fruit, 1 vegetable.</string>
+
+    <string name="nutrition2">1 wrap: 399 calories, 10g fat (4g saturated fat), 72mg cholesterol, 256mg sodium, 68g carbohydrate (29g sugars, 9g fiber), 15g protein.</string>
+
+    <string name="nutrition3">3/4 cup: 323 calories, 12g fat (2g saturated fat), 0 cholesterol, 226mg sodium, 49g carbohydrate (19g sugars, 6g fiber), 11g protein.</string>
+
+    <string name="nutrition4">1 serving: 305 calories, 11g fat (2g saturated fat), 186mg cholesterol, 364mg sodium, 40g carbohydrate (4g sugars, 4g fiber), 12g protein. Diabetic Exchanges: 2 starch, 1 medium-fat meat, 1 vegetable, 1 fat.</string>
+
+    <string name="nutrition5">1 cup: 287 calories, 10g fat (3g saturated fat), 60mg cholesterol, 267mg sodium, 27g carbohydrate (20g sugars, 2g fiber), 24g protein. Diabetic Exchanges: 3 lean meat, 1-1/2 starch, 1 vegetable, 1/2 fruit.</string>
+
+    <string name="nutrition6">3/4 cup: 68 calories, 0 fat (0 saturated fat), 1mg cholesterol, 4mg sodium, 16g carbohydrate (14g sugars, 1g fiber), 2g protein. Diabetic Exchanges: 1 starch.</string>
+
+    <string name="nutrition7">1 burger: 247 calories, 3g fat (1g saturated fat), 0 cholesterol, 700mg sodium, 47g carbohydrate (8g sugars, 7g fiber), 8g protein.</string>
+
+    <string name="nutrition8">3/4 cup: 143 calories, 5g fat (1g saturated fat), 0 cholesterol, 88mg sodium, 23g carbohydrate (6g sugars, 3g fiber), 4g protein. Diabetic Exchanges: 1 starch, 1 vegetable, 1 fat.</string>
+
+    <string name="nutrition9">1 serving: 224 calories\n " +
+                "11g fat (5g saturated fat)\n" +
+                "201mg cholesterol\n" +
+                "433mg sodium\n " +
+                "24g carbohydrate (10g sugars, 3g fiber)\n" +
+                "8g protein.\n " +
+                "Diabetic Exchanges: \n" +
+                "1-1/2 starch\n" +
+                "1-1/2 fat\n" +
+                "1 medium-fat meat.";</string>
+
 </resources>

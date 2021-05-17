@@ -3,6 +3,7 @@ package adapterRecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,7 @@ public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull AdapterDishes.ViewHolder holder, int position) {
         holder.dishesTitle.setText(listDishes.get(position).getTitle());
+        holder.dishesBanner.setImageResource(listDishes.get(position).getBanner());
     }
 
     @Override
@@ -44,11 +46,13 @@ public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView dishesTitle;
+        ImageView dishesBanner;
         onDishesListener onDishesListener;
 
         public ViewHolder(@NonNull View itemView, onDishesListener onDishesListener) {
             super(itemView);
             dishesTitle = itemView.findViewById(R.id.itemDishesTitle);
+            dishesBanner = itemView.findViewById(R.id.itemDishesBanner);
             this.onDishesListener = onDishesListener;
 
             itemView.setOnClickListener(this);
