@@ -6,7 +6,7 @@
     android:background="#e4e4e4" >
 
     <ImageView
-        android:id="@+id/itemDishesPicture"
+        android:id="@+id/itemDishesBanner"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

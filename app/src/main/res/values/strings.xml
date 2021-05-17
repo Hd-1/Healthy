@@ -22,4 +22,8 @@
     <string name="healthy">Healthy</string>
     <string name="training">Training</string>
     <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="warning">Warning</string>
+    <string name="step">Step</string>
+    <string name="challenge">Challenge</string>
 </resources>
