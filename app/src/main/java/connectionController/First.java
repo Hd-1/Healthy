@@ -10,6 +10,8 @@ import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import bottomMenuController.Home;
+import content.DishesContent;
+import content.TrainingContent;
 
 
 public class First extends AppCompatActivity {
@@ -18,6 +20,15 @@ public class First extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        DishesContent.removeAllDishes();
+        TrainingContent.removeAllTrainings();
+
+        new DishesContent(getApplicationContext());
+        DishesContent.addDishes();
+
+        new TrainingContent(getApplicationContext());
+        TrainingContent.addTrainings();
     }
 
     @Override

@@ -1,14 +1,8 @@
 package drawerMenuController;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,43 +13,22 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.healthy.R;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-
 import bottomMenuController.Home;
-import bottomMenuController.Start;
 import connectionController.First;
-import fragment.DishesFragment;
-import fragment.FavoriteDishesFragment;
-import fragment.FavoriteTrainingFragment;
-import fragment.TrainingFragment;
 
-public class Favorite extends AppCompatActivity {
+public class Ingredients extends AppCompatActivity {
 
-    //Initialize variable
     DrawerLayout drawerLayout;
-    TabLayout tabLayout;
-    ViewPager viewPager;
-    MainAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorite);
+        setContentView(R.layout.activity_settings);
         getSupportActionBar().hide();
 
         drawerLayout = findViewById(R.id.drawerLayout);
-
-        tabLayout = findViewById(R.id.tab_layout);
-        viewPager = findViewById(R.id.viewPager);
-        adapter = new MainAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new FavoriteTrainingFragment(),"training");
-        adapter.AddFragment(new FavoriteDishesFragment(), "dishes");
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
-
     }
 
     public void clickMenuDrawer(View v){
@@ -119,7 +92,6 @@ public class Favorite extends AppCompatActivity {
     public void navDrawerClickEquipments(View v){
         redirectActivity(this, Equipments.class);
     }
-
     public void navDrawerClickLogOut(View v){
         logout(this);
     }
@@ -133,7 +105,7 @@ public class Favorite extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), First.class));
-                Toast.makeText(Favorite.this, "Sign Out Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Ingredients.this, "Sign Out Successful", Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -145,36 +117,4 @@ public class Favorite extends AppCompatActivity {
         builder.show();
     }
 
-    private class MainAdapter extends FragmentPagerAdapter {
-        //Initialize ArrayList
-        ArrayList<Fragment> fragmentsArrayList = new ArrayList<>();
-        ArrayList<String> stringArrayList = new ArrayList<>();
-
-        //Constructor
-        public void AddFragment(Fragment f, String s){
-            fragmentsArrayList.add(f);
-            stringArrayList.add(s);
-        }
-
-        public MainAdapter(@NonNull FragmentManager fm) {
-            super(fm);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentsArrayList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentsArrayList.size();
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return  stringArrayList.get(position);
-        }
-    }
 }

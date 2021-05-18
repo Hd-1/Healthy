@@ -19,9 +19,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import connectionController.Login;
+import drawerMenuController.Equipments;
 import drawerMenuController.Favorite;
 import drawerMenuController.Fridge;
+import drawerMenuController.Ingredients;
+import drawerMenuController.MyGym;
 import drawerMenuController.Profile;
+import drawerMenuController.Schedule;
 import drawerMenuController.Settings;
 import drawerMenuController.Statistics;
 
@@ -111,6 +115,22 @@ public class Notifications extends AppCompatActivity {
 
     public void navDrawerClickLogOut(View v){
         logout(this);
+    }
+
+    public void navDrawerClickSchedule(View v){
+        redirectActivity(this, Schedule.class);
+    }
+
+    public void navDrawerClickIngredients(View v){
+        redirectActivity(this, Ingredients.class);
+    }
+
+    public void navDrawerClickMyGym(View v){
+        redirectActivity(this, MyGym.class);
+    }
+
+    public void navDrawerClickEquipments(View v){
+        redirectActivity(this, Equipments.class);
     }
 
     private void logout(Activity a) {

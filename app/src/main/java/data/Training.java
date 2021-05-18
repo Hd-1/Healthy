@@ -10,8 +10,9 @@ public class Training {
     int image1;
     int image2;
     int image3;
+    boolean favStatus;
 
-    public Training(String title, int banner, String description, String warning, String challenge, String steps, int image1, int image2, int image3) {
+    public Training(String title, int banner, String description, String warning, String challenge, String steps, int image1, int image2, int image3, boolean favStatus) {
         this.title = title;
         this.banner = banner;
         this.description = description;
@@ -21,6 +22,7 @@ public class Training {
         this.image1 = image1;
         this.image2 = image2;
         this.image3 = image3;
+        this.favStatus = favStatus;
     }
 
     public String getTitle() {
@@ -93,5 +95,13 @@ public class Training {
 
     public void setImage3(int image3) {
         this.image3 = image3;
+    }
+
+    public boolean isFavStatus() {
+        return favStatus;
+    }
+
+    public void setFavStatus(boolean favStatus) {
+        this.favStatus = favStatus;
     }
 }

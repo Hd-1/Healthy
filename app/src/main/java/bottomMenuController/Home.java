@@ -5,8 +5,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,9 +21,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import connectionController.First;
+import connectionController.Login;
+import content.DishesContent;
+import content.TrainingContent;
+import drawerMenuController.Equipments;
 import drawerMenuController.Favorite;
 import drawerMenuController.Fridge;
+import drawerMenuController.Ingredients;
+import drawerMenuController.MyGym;
 import drawerMenuController.Profile;
+import drawerMenuController.Schedule;
 import drawerMenuController.Settings;
 import drawerMenuController.Statistics;
 
@@ -94,6 +103,22 @@ public class Home extends AppCompatActivity {
     public void navDrawerClickFavorite(View v){ redirectActivity(this, Favorite.class); }
 
     public void navDrawerClickSettings(View v){ redirectActivity(this, Settings.class); }
+
+    public void navDrawerClickSchedule(View v){
+        redirectActivity(this, Schedule.class);
+    }
+
+    public void navDrawerClickIngredients(View v){
+        redirectActivity(this, Ingredients.class);
+    }
+
+    public void navDrawerClickMyGym(View v){
+        redirectActivity(this, MyGym.class);
+    }
+
+    public void navDrawerClickEquipments(View v){
+        redirectActivity(this, Equipments.class);
+    }
 
     public void navDrawerClickLogOut(View v){logout(this); }
 

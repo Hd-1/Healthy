@@ -9,14 +9,16 @@ public class Dishes {
     String nutritionFacts;
     ArrayList<String> ingredients;
     int image;
+    boolean favStatus;
 
-    public Dishes(String title, int banner, String directions, String nutritionFacts, ArrayList<String> ingredients, int image) {
+    public Dishes(String title, int banner, String directions, String nutritionFacts, ArrayList<String> ingredients, int image, boolean favStatus) {
         this.title = title;
         this.banner = banner;
         this.directions = directions;
         this.nutritionFacts = nutritionFacts;
         this.ingredients = ingredients;
         this.image = image;
+        this.favStatus = favStatus;
     }
 
     public String getTitle() {
@@ -65,5 +67,13 @@ public class Dishes {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public boolean isFavStatus() {
+        return favStatus;
+    }
+
+    public void setFavStatus(boolean favStatus) {
+        this.favStatus = favStatus;
     }
 }

@@ -98,6 +98,22 @@ public class Profile extends AppCompatActivity {
         redirectActivity(this, Settings.class);
     }
 
+    public void navDrawerClickSchedule(View v){
+        redirectActivity(this, Schedule.class);
+    }
+
+    public void navDrawerClickIngredients(View v){
+        redirectActivity(this, Ingredients.class);
+    }
+
+    public void navDrawerClickMyGym(View v){
+        redirectActivity(this, MyGym.class);
+    }
+
+    public void navDrawerClickEquipments(View v){
+        redirectActivity(this, Equipments.class);
+    }
+
     public void navDrawerClickLogOut(View v){
         logout(this);
     }
@@ -121,12 +137,6 @@ public class Profile extends AppCompatActivity {
             }
         });
         builder.show();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        closeDrawer(drawerLayout);
     }
 
 }

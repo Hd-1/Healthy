@@ -10,17 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/favBtn"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:gravity="bottom"
-            android:background="@drawable/ic_favorite"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="10dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp" />
+    <Button
+        android:id="@+id/favBtnTraining"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="bottom"
+        android:background="@drawable/ic_favorite_uncheck"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"

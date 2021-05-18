@@ -11,11 +11,11 @@
         android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/favBtn"
+        android:id="@+id/favBtnDishes"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:gravity="bottom"
-        android:background="@drawable/ic_favorite"
+        android:background="@drawable/ic_favorite_uncheck"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
         android:layout_marginRight="10dp"

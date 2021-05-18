@@ -1,6 +1,9 @@
 package adapterRecyclerView;
 
-import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,42 +12,35 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.healthy.R;
 
 import java.util.ArrayList;
 
 import content.FavoriteDishesContent;
 import data.Dishes;
+import fragment.FavoriteDishesFragment;
 
-public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder>{
+public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFavorite.ViewHolder>{
 
     ArrayList<Dishes> listDishes;
     final onDishesListener mOnDishesListener;
 
-    public AdapterDishes(ArrayList<Dishes> listDishes, onDishesListener onDishesListener) {
+    public AdapterDishesFavorite(ArrayList<Dishes> listDishes, onDishesListener onDishesListener) {
         this.listDishes = listDishes;
         this.mOnDishesListener = onDishesListener;
     }
 
     @NonNull
     @Override
-    public AdapterDishes.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dishes,parent,false);
-        return new AdapterDishes.ViewHolder(v,mOnDishesListener);
+        return new ViewHolder(v, mOnDishesListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterDishes.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.dishesTitle.setText(listDishes.get(position).getTitle());
         holder.dishesBanner.setImageResource(listDishes.get(position).getBanner());
-        if (listDishes.get(position).isFavStatus()) {
-            holder.favBtn.setBackgroundResource(R.drawable.ic_favorite);
-        } else {
-            holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-        }
     }
 
     @Override
@@ -57,9 +53,9 @@ public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder
         TextView dishesTitle;
         ImageView dishesBanner;
         Button favBtn;
-        onDishesListener onDishesListener;
+        AdapterDishesFavorite.onDishesListener onDishesListener;
 
-        public ViewHolder(@NonNull View itemView, onDishesListener onDishesListener) {
+        public ViewHolder(@NonNull View itemView, AdapterDishesFavorite.onDishesListener onDishesListener) {
             super(itemView);
             dishesTitle = itemView.findViewById(R.id.itemDishesTitle);
             dishesBanner = itemView.findViewById(R.id.itemDishesBanner);
@@ -71,19 +67,13 @@ public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder
                     int position = getAdapterPosition();
                     Dishes dishes = listDishes.get(position);
 
-                    if (dishes.isFavStatus()){
-                        dishes.setFavStatus(false);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                        FavoriteDishesContent.removeDishes(position);
-                        Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                    } else {
-                        dishes.setFavStatus(true);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite);
-                        FavoriteDishesContent.addDishes(dishes);
-                        Toast.makeText(itemView.getContext(), "Added to Favorite", Toast.LENGTH_SHORT).show();
-                    }
+                    dishes.setFavStatus(false);
+                    favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                    FavoriteDishesContent.removeDishes(position);
+                    Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
                 }
             });
+
             this.onDishesListener = onDishesListener;
             itemView.setOnClickListener(this);
         }
@@ -92,11 +82,10 @@ public class AdapterDishes extends RecyclerView.Adapter<AdapterDishes.ViewHolder
         public void onClick(View v) {
             onDishesListener.onDishesClick(getAdapterPosition());
         }
-        }
+    }
 
-        public interface onDishesListener{
-            void onDishesClick(int position);
-        }
+    public interface onDishesListener{
+        void onDishesClick(int position);
+    }
 
 }
-

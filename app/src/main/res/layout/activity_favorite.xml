@@ -11,16 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/drawer"/>
 
-        <TextView
+        <include
+            layout="@layout/drawer" />
+
+        <include
+            layout="@layout/tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/favorite"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
     <RelativeLayout

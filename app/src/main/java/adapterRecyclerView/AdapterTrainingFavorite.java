@@ -1,6 +1,5 @@
 package adapterRecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +15,15 @@ import java.util.ArrayList;
 
 import com.example.healthy.R;
 
-import content.FavoriteDishesContent;
 import content.FavoriteTrainingContent;
 import data.Training;
 
-public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHolder> {
+public class AdapterTrainingFavorite extends RecyclerView.Adapter<AdapterTrainingFavorite.ViewHolder> {
 
     ArrayList<Training> listTraining;
     final onTrainingListener mOnTrainingListener;
 
-    public AdapterTraining(ArrayList<Training> listTraining, onTrainingListener onTrainingListener) {
+    public AdapterTrainingFavorite(ArrayList<Training> listTraining, onTrainingListener onTrainingListener) {
         this.listTraining = listTraining;
         this.mOnTrainingListener = onTrainingListener;
     }
@@ -41,11 +39,6 @@ public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.trainingTitle.setText(listTraining.get(position).getTitle());
         holder.trainingBanner.setImageResource(listTraining.get(position).getBanner());
-        if (listTraining.get(position).isFavStatus()) {
-            holder.favBtn.setBackgroundResource(R.drawable.ic_favorite);
-        } else {
-            holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-        }
     }
 
     @Override
@@ -57,9 +50,8 @@ public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHo
 
         TextView trainingTitle;
         ImageView trainingBanner;
-        Button favBtn;
         onTrainingListener onTrainingListener;
-
+        Button favBtn;
 
         public ViewHolder(@NonNull View itemView, onTrainingListener onTrainingListener) {
             super(itemView);
@@ -73,19 +65,13 @@ public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHo
                     int position = getAdapterPosition();
                     Training training = listTraining.get(position);
 
-                    if (training.isFavStatus()){
-                        training.setFavStatus(false);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                        FavoriteTrainingContent.removeTraining(position);
-                        Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                    } else {
-                        training.setFavStatus(true);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite);
-                        FavoriteTrainingContent.addTraining(training);
-                        Toast.makeText(itemView.getContext(), "Added to Favorite", Toast.LENGTH_SHORT).show();
-                    }
+                    training.setFavStatus(false);
+                    favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                    FavoriteTrainingContent.removeTraining(position);
+                    Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
                 }
             });
+
             this.onTrainingListener = onTrainingListener;
             itemView.setOnClickListener(this);
         }

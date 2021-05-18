@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -21,6 +20,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.healthy.R;
+
+import content.DishesContent;
+import content.TrainingContent;
+import drawerMenuController.Equipments;
+import drawerMenuController.Ingredients;
+import drawerMenuController.MyGym;
+import drawerMenuController.Schedule;
 import fragment.DishesFragment;
 import fragment.TrainingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,8 +50,6 @@ public class Start extends AppCompatActivity {
     ViewPager viewPager;
     MainAdapter adapter;
 
-
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,6 +142,22 @@ public class Start extends AppCompatActivity {
 
     public void navDrawerClickLogOut(View v){
         logout(this);
+    }
+
+    public void navDrawerClickSchedule(View v){
+        redirectActivity(this, Schedule.class);
+    }
+
+    public void navDrawerClickIngredients(View v){
+        redirectActivity(this, Ingredients.class);
+    }
+
+    public void navDrawerClickMyGym(View v){
+        redirectActivity(this, MyGym.class);
+    }
+
+    public void navDrawerClickEquipments(View v){
+        redirectActivity(this, Equipments.class);
     }
 
     private void logout(Activity a) {
