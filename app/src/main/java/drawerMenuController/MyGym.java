@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-import adapterRecyclerView.AdapterMyGym;
+import adapterRecyclerView.AdapterItems;
 import bottomMenuController.Home;
 import connectionController.First;
 
@@ -28,7 +28,7 @@ public class MyGym extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     RecyclerView list;
-    AdapterMyGym adapter;
+    AdapterItems adapter;
     EditText editItem;
     ArrayList<String> items = new ArrayList<>();
 
@@ -38,12 +38,12 @@ public class MyGym extends AppCompatActivity {
         setContentView(R.layout.activity_my_gym);
         getSupportActionBar().hide();
 
-        editItem = findViewById(R.id.editItemMyGym);
-        list = findViewById(R.id.myGymList);
         items.add("test");
 
+        editItem = findViewById(R.id.editItemMyGym);
+        list = findViewById(R.id.myGymList);
         list.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterMyGym(items);
+        adapter = new AdapterItems(items);
         list.setAdapter(adapter);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -52,7 +52,7 @@ public class MyGym extends AppCompatActivity {
     public void addItemToMyGym(View v){
         String item;
         item = editItem.getText().toString().trim();
-        if(item != ""){
+        if(item.isEmpty()){
             items.add(item);
             editItem.setText("");
             adapter.notifyDataSetChanged();

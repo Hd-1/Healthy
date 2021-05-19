@@ -20,8 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-import adapterRecyclerView.AdapterFridge;
-import adapterRecyclerView.AdapterIngredients;
+import adapterRecyclerView.AdapterItems;
 import bottomMenuController.Home;
 import connectionController.First;
 
@@ -29,7 +28,7 @@ public class Fridge extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     RecyclerView list;
-    AdapterFridge adapter;
+    AdapterItems adapter;
     EditText editItem;
     ArrayList<String> items = new ArrayList<>();
 
@@ -39,13 +38,12 @@ public class Fridge extends AppCompatActivity {
         setContentView(R.layout.activity_fridge);
         getSupportActionBar().hide();
 
-        editItem = findViewById(R.id.editItemFridge);
-        list = findViewById(R.id.myIngredientList);
-
         items.add("test");
 
+        editItem = findViewById(R.id.editItemFridge);
+        list = findViewById(R.id.myIngredientList);
         list.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterFridge(items);
+        adapter = new AdapterItems(items);
         list.setAdapter(adapter);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -54,7 +52,7 @@ public class Fridge extends AppCompatActivity {
     public void addItemToFridge(View v){
         String item;
         item = editItem.getText().toString().trim();
-        if(item != ""){
+        if(!item.isEmpty()){
             items.add(item);
             editItem.setText("");
             adapter.notifyDataSetChanged();

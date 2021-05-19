@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Healthy">
-        <activity android:name="drawerMenuController.Equipments"></activity>
+        <activity
+            android:name="profileManagement.EditPassword"
+            android:parentActivityName="drawerMenuController.Profile"
+            />
+        <activity
+            android:name="profileManagement.EditProfile"
+            android:parentActivityName="drawerMenuController.Profile" />
+        <activity android:name="drawerMenuController.Equipments" />
         <activity android:name="drawerMenuController.MyGym" />
         <activity android:name="drawerMenuController.Ingredients" />
         <activity android:name="drawerMenuController.Schedule" />

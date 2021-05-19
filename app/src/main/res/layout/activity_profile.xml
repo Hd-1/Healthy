@@ -14,17 +14,18 @@
         android:orientation="vertical">
         <include layout="@layout/drawer"/>
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:padding="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="25dp">
 
             <ImageView
                 android:id="@+id/profileImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/profile_image" />
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/profile_image"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/profileName"
@@ -45,8 +46,29 @@
                 android:text="Email"
                 android:textSize="30sp" />
 
-
-        </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="edit profile"
+                android:onClick="editProfile" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="rest password"
+                android:onClick="resetPassword"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="logout"
+                android:onClick="logoutFromProfile"/>
+    </LinearLayout>
+            </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

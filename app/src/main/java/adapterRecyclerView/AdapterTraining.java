@@ -46,6 +46,24 @@ public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHo
         } else {
             holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
         }
+        holder.favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Training training = listTraining.get(position);
+
+                if (training.isFavStatus()){
+                    training.setFavStatus(false);
+                    holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                    FavoriteTrainingContent.removeTraining(position);
+                    Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
+                } else {
+                    training.setFavStatus(true);
+                    holder.favBtn.setBackgroundResource(R.drawable.ic_favorite);
+                    FavoriteTrainingContent.addTraining(training);
+                    Toast.makeText(holder.itemView.getContext(), "Added to Favorite", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -67,25 +85,7 @@ public class AdapterTraining extends RecyclerView.Adapter<AdapterTraining.ViewHo
             trainingBanner = itemView.findViewById(R.id.itemTrainingBanner);
             favBtn = itemView.findViewById(R.id.favBtnTraining);
             favBtn.setBackgroundResource(R.drawable.ic_favorite);
-            favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Training training = listTraining.get(position);
 
-                    if (training.isFavStatus()){
-                        training.setFavStatus(false);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                        FavoriteTrainingContent.removeTraining(position);
-                        Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                    } else {
-                        training.setFavStatus(true);
-                        favBtn.setBackgroundResource(R.drawable.ic_favorite);
-                        FavoriteTrainingContent.addTraining(training);
-                        Toast.makeText(itemView.getContext(), "Added to Favorite", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
             this.onTrainingListener = onTrainingListener;
             itemView.setOnClickListener(this);
         }

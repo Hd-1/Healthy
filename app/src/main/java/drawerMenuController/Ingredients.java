@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-import adapterRecyclerView.AdapterIngredients;
+import adapterRecyclerView.AdapterItems;
 import bottomMenuController.Home;
 import connectionController.First;
 
@@ -28,7 +28,7 @@ public class Ingredients extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     RecyclerView list;
-    AdapterIngredients adapter;
+    AdapterItems adapter;
     EditText editItem;
     ArrayList<String> items = new ArrayList<>();
 
@@ -38,13 +38,12 @@ public class Ingredients extends AppCompatActivity {
         setContentView(R.layout.activity_ingredients);
         getSupportActionBar().hide();
 
-        editItem = findViewById(R.id.editItemIngredients);
-        list = findViewById(R.id.myIngredientList);
-
         items.add("test");
 
+        editItem = findViewById(R.id.editItemIngredients);
+        list = findViewById(R.id.myIngredientList);
         list.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterIngredients(items);
+        adapter = new AdapterItems(items);
         list.setAdapter(adapter);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -53,7 +52,7 @@ public class Ingredients extends AppCompatActivity {
     public void addItemToIngredients(View v){
         String item;
         item = editItem.getText().toString().trim();
-        if(item != ""){
+        if(!item.isEmpty()){
             items.add(item);
             editItem.setText("");
             adapter.notifyDataSetChanged();

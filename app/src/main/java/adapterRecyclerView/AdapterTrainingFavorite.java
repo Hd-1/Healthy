@@ -39,6 +39,20 @@ public class AdapterTrainingFavorite extends RecyclerView.Adapter<AdapterTrainin
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.trainingTitle.setText(listTraining.get(position).getTitle());
         holder.trainingBanner.setImageResource(listTraining.get(position).getBanner());
+
+        holder.favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Training training = listTraining.get(position);
+
+                training.setFavStatus(false);
+                notifyItemRemoved(position);
+                holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                FavoriteTrainingContent.removeTraining(position);
+                Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -59,18 +73,6 @@ public class AdapterTrainingFavorite extends RecyclerView.Adapter<AdapterTrainin
             trainingBanner = itemView.findViewById(R.id.itemTrainingBanner);
             favBtn = itemView.findViewById(R.id.favBtnTraining);
             favBtn.setBackgroundResource(R.drawable.ic_favorite);
-            favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Training training = listTraining.get(position);
-
-                    training.setFavStatus(false);
-                    favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                    FavoriteTrainingContent.removeTraining(position);
-                    Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                }
-            });
 
             this.onTrainingListener = onTrainingListener;
             itemView.setOnClickListener(this);

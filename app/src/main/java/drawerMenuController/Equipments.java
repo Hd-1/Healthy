@@ -20,8 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-import adapterRecyclerView.AdapterEquipments;
-import adapterRecyclerView.AdapterIngredients;
+import adapterRecyclerView.AdapterItems;
 import bottomMenuController.Home;
 import connectionController.First;
 
@@ -29,7 +28,7 @@ public class Equipments extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     RecyclerView list;
-    AdapterEquipments adapter;
+    AdapterItems adapter;
     EditText editItem;
     ArrayList<String> items = new ArrayList<>();
 
@@ -39,28 +38,27 @@ public class Equipments extends AppCompatActivity {
         setContentView(R.layout.activity_equipments);
         getSupportActionBar().hide();
 
-        editItem = findViewById(R.id.editItemEquipments);
-        list = findViewById(R.id.myEquipmentsList);
-
         items.add("test");
 
+        editItem = findViewById(R.id.editItemEquipments);
+        list = findViewById(R.id.myEquipmentsList);
         list.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterEquipments(items);
+        adapter = new AdapterItems(items);
         list.setAdapter(adapter);
 
         drawerLayout = findViewById(R.id.drawerLayout);
     }
 
     public void addItemToEquipmentsList(View v) {
-        String item;
-        item = editItem.getText().toString().trim();
-        if (item != "") {
+        String item = editItem.getText().toString().trim();
+        if (!item.isEmpty()) {
             items.add(item);
             editItem.setText("");
             adapter.notifyDataSetChanged();
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
         }
     }
+
     public void clickMenuDrawer(View v){
         openDrawer(drawerLayout);
     }

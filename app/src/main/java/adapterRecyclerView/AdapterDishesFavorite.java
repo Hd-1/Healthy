@@ -39,6 +39,18 @@ public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFa
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.dishesTitle.setText(listDishes.get(position).getTitle());
         holder.dishesBanner.setImageResource(listDishes.get(position).getBanner());
+        holder.favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dishes dishes = listDishes.get(position);
+
+                dishes.setFavStatus(false);
+                notifyItemRemoved(position);
+                holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                FavoriteDishesContent.removeDishes(position);
+                Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -59,18 +71,6 @@ public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFa
             dishesBanner = itemView.findViewById(R.id.itemDishesBanner);
             favBtn = itemView.findViewById(R.id.favBtnDishes);
             favBtn.setBackgroundResource(R.drawable.ic_favorite);
-            favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Dishes dishes = listDishes.get(position);
-
-                    dishes.setFavStatus(false);
-                    favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                    FavoriteDishesContent.removeDishes(position);
-                    Toast.makeText(itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                }
-            });
 
             this.onDishesListener = onDishesListener;
             itemView.setOnClickListener(this);

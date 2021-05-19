@@ -1,6 +1,5 @@
 package drawerMenuController;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -18,13 +17,11 @@ import android.widget.Toast;
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import bottomMenuController.Home;
 import connectionController.First;
+import profileManagement.EditPassword;
+import profileManagement.EditProfile;
 
 public class Profile extends AppCompatActivity {
 
@@ -51,6 +48,17 @@ public class Profile extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
     }
 
+    public void editProfile(View v){
+        startActivity(new Intent(getApplicationContext(), EditProfile.class));
+    }
+
+    public void resetPassword(View v){
+        startActivity(new Intent(getApplicationContext(), EditPassword.class));
+    }
+
+    public void logoutFromProfile(View v){
+        logout(this);
+    }
 
     public void clickMenuDrawer(View v){
         openDrawer(drawerLayout);
