@@ -14,13 +14,39 @@
         <include
             layout="@layout/drawer"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/fridge"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editItemFridge"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/new_ingredients"
+                        android:inputType="textPersonName"
+                        android:layout_marginTop="8dp"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add"
+                        android:layout_marginTop="4dp"
+                        android:onClick="addItemToFridge"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myIngredientList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="drawerMenuController.Ingredients"
+    tools:context="drawerMenuController.Equipments"
     android:id="@+id/drawerLayout">
 
     <LinearLayout
@@ -25,10 +25,10 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editItemIngredients"
+                        android:id="@+id/editItemEquipments"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/new_ingredients"
+                        android:hint="@string/new_equipment"
                         android:inputType="textPersonName"
                         android:layout_marginTop="8dp"/>
 
@@ -37,12 +37,12 @@
                         android:layout_height="wrap_content"
                         android:text="@string/add"
                         android:layout_marginTop="4dp"
-                        android:onClick="addItemToIngredients"/>
+                        android:onClick="addItemToEquipmentsList"/>
 
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/myIngredientList"
+                    android:id="@+id/myEquipmentsList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 

@@ -3,6 +3,8 @@ package drawerMenuController;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,25 +12,53 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+
+import adapterRecyclerView.AdapterIngredients;
 import bottomMenuController.Home;
 import connectionController.First;
 
 public class Ingredients extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    RecyclerView list;
+    AdapterIngredients adapter;
+    EditText editItem;
+    ArrayList<String> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_ingredients);
         getSupportActionBar().hide();
 
+        editItem = findViewById(R.id.editItemIngredients);
+        list = findViewById(R.id.myIngredientList);
+
+        items.add("test");
+
+        list.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterIngredients(items);
+        list.setAdapter(adapter);
+
         drawerLayout = findViewById(R.id.drawerLayout);
+    }
+
+    public void addItemToIngredients(View v){
+        String item;
+        item = editItem.getText().toString().trim();
+        if(item != ""){
+            items.add(item);
+            editItem.setText("");
+            adapter.notifyDataSetChanged();
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void clickMenuDrawer(View v){

@@ -246,5 +246,8 @@
                 1-1/2 starch\n
                 1-1/2 fat\n
                 1 medium-fat meat.</string>
+    <string name="new_equipment">New Equipment</string>
+    <string name="add">Add</string>
+    <string name="new_ingredients">New Ingredients</string>
 
 </resources>

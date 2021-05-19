@@ -34,7 +34,6 @@ public class FavoriteDishesFragment extends Fragment  implements AdapterDishesFa
         dishesView = inflater.inflate(R.layout.fragment_favorite_dishes, container, false);
 
         dishesList = dishesView.findViewById(R.id.favoriteDishesList);
-        dishesList.hasFixedSize();
         dishesList.setLayoutManager(new LinearLayoutManager(getContext()));
         dishes = FavoriteDishesContent.getDishes();
 

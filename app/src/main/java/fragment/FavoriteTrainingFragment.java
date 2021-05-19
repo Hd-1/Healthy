@@ -33,7 +33,6 @@ public class FavoriteTrainingFragment extends Fragment implements AdapterTrainin
         trainingView = inflater.inflate(R.layout.fragment_favorite_training, container, false);
 
         trainingList = trainingView.findViewById(R.id.favoriteTrainingList);
-        trainingList.hasFixedSize();
         trainingList.setLayoutManager(new LinearLayoutManager(getContext()));
         trainings = FavoriteTrainingContent.getTraining();
 

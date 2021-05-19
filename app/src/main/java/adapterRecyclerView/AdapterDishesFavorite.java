@@ -3,7 +3,6 @@ package adapterRecyclerView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import java.util.ArrayList;
 
 import content.FavoriteDishesContent;
 import data.Dishes;
-import fragment.FavoriteDishesFragment;
 
 public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFavorite.ViewHolder>{
 

@@ -25,7 +25,7 @@ public class Schedule extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_schedule);
         getSupportActionBar().hide();
 
         drawerLayout = findViewById(R.id.drawerLayout);

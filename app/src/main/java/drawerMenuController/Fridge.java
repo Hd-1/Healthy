@@ -3,6 +3,8 @@ package drawerMenuController;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,17 +12,26 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+
+import adapterRecyclerView.AdapterFridge;
+import adapterRecyclerView.AdapterIngredients;
 import bottomMenuController.Home;
 import connectionController.First;
 
 public class Fridge extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    RecyclerView list;
+    AdapterFridge adapter;
+    EditText editItem;
+    ArrayList<String> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +39,28 @@ public class Fridge extends AppCompatActivity {
         setContentView(R.layout.activity_fridge);
         getSupportActionBar().hide();
 
+        editItem = findViewById(R.id.editItemFridge);
+        list = findViewById(R.id.myIngredientList);
+
+        items.add("test");
+
+        list.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterFridge(items);
+        list.setAdapter(adapter);
+
         drawerLayout = findViewById(R.id.drawerLayout);
     }
 
+    public void addItemToFridge(View v){
+        String item;
+        item = editItem.getText().toString().trim();
+        if(item != ""){
+            items.add(item);
+            editItem.setText("");
+            adapter.notifyDataSetChanged();
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public void clickMenuDrawer(View v){
         openDrawer(drawerLayout);
