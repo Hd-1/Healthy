@@ -1,6 +1,9 @@
 # Video
 https://youtu.be/7MkABnYWuSw
 
+Requirements which where delivered are checked in the MoSCoW prioritized requirements section below.
+
+
 # Healthy
 Application Project for the Android course at VIA University.
 Healthy is a Project based on well-being.
