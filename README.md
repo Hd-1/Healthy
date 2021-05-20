@@ -1,3 +1,6 @@
+# Video
+https://youtu.be/7MkABnYWuSw
+
 # Healthy
 Application Project for the Android course at VIA University.
 Healthy is a Project based on well-being.
@@ -15,19 +18,19 @@ User can place the programm anywhere he wants in the schedule.
 # MoSCoW prioritized requirements
 
 ### Must Have
-* Fully implemented programms and recipes list.
-* Possibility to create an account, to sign out and log in.
-* Possibility to add to favorite.
-* Schedule Management.
-* Profile Management.
+- [X] Fully implemented programms and recipes list.
+- [X] Possibility to create an account, to sign out and log in.
+- [X] Possibility to add to favorite.
+- [X] Schedule Management.
+- [X] Profile Management.
 ### Should Have
-* A shopping list for ingredients.
-* A shopping list for sports equipment.
-* Fridge section where user can put ingredients he already has.
-* My Sport Room section where user can put sports equipments he already has.
+- [X] A shopping list for ingredients.
+- [X] A shopping list for sports equipment.
+- [X] Fridge section where user can put ingredients he already has.
+- [X] My Sport Room section where user can put sports equipments he already has.
 ### Could Have
-* Comments & Feedbacks on programms and recipes.
-* Add friends.
-* Compare stats with friends.
+- [ ] Comments & Feedbacks on programms and recipes.
+- [ ] Add friends.
+- [ ] Compare stats with friends.
 ### Won't Have
 * Chat & Messagery features
