@@ -3,6 +3,8 @@ package drawerMenuController;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,12 +17,21 @@ import android.widget.Toast;
 import com.example.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+
+import activity.FavoriteTrainingActivity;
+import activity.TrainingFromScheduleActivity;
+import adapterRecyclerView.AdapterSchedule;
 import bottomMenuController.Home;
 import connectionController.First;
+import content.ScheduleContent;
 
-public class Schedule extends AppCompatActivity {
+public class Schedule extends AppCompatActivity implements AdapterSchedule.onScheduleListener{
 
     DrawerLayout drawerLayout;
+    RecyclerView scheduleList;
+    AdapterSchedule adapter;
+    ArrayList<data.Schedule> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +39,32 @@ public class Schedule extends AppCompatActivity {
         setContentView(R.layout.activity_schedule);
         getSupportActionBar().hide();
 
+        list = ScheduleContent.getSchedule();
+
         drawerLayout = findViewById(R.id.drawerLayout);
+        scheduleList = findViewById(R.id.scheduleList);
+
+        scheduleList.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdapterSchedule(list,this);
+        scheduleList.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void onScheduleClick(int position) {
+        list.get(position);
+        Intent intent = new Intent(this, TrainingFromScheduleActivity.class);
+        String date = list.get(position).getDay() + "\n" + list.get(position).getHours() + "h" + list.get(position).getMinutes();
+        intent.putExtra("trainingDate",date);
+        intent.putExtra("trainingTitle",list.get(position).getTitle());
+        intent.putExtra("trainingDescription",list.get(position).getDescription());
+        intent.putExtra("trainingWarning",list.get(position).getWarning());
+        intent.putExtra("trainingChallenge",list.get(position).getChallenge());
+        intent.putExtra("trainingSteps",list.get(position).getSteps());
+        intent.putExtra("imageOne",list.get(position).getImage1());
+        intent.putExtra("imageTwo",list.get(position).getImage2());
+        intent.putExtra("imageThree",list.get(position).getImage3());
+        startActivity(intent);
     }
 
     public void clickMenuDrawer(View v){

@@ -38,8 +38,6 @@ public class MyGym extends AppCompatActivity {
         setContentView(R.layout.activity_my_gym);
         getSupportActionBar().hide();
 
-        items.add("test");
-
         editItem = findViewById(R.id.editItemMyGym);
         list = findViewById(R.id.myGymList);
         list.setLayoutManager(new LinearLayoutManager(this));

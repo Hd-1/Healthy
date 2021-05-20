@@ -49,6 +49,7 @@ public class TrainingFragment extends Fragment implements AdapterTraining.onTrai
     public void onTrainingClick(int position) {
         trainings.get(position);
         Intent intent = new Intent(getContext(), TrainingActivity.class);
+        intent.putExtra("trainingPosition",position);
         intent.putExtra("trainingTitle",trainings.get(position).getTitle());
         intent.putExtra("trainingDescription",trainings.get(position).getDescription());
         intent.putExtra("trainingWarning",trainings.get(position).getWarning());

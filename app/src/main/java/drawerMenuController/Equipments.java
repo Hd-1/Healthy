@@ -38,8 +38,6 @@ public class Equipments extends AppCompatActivity {
         setContentView(R.layout.activity_equipments);
         getSupportActionBar().hide();
 
-        items.add("test");
-
         editItem = findViewById(R.id.editItemEquipments);
         list = findViewById(R.id.myEquipmentsList);
         list.setLayoutManager(new LinearLayoutManager(this));

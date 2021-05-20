@@ -1,36 +1,34 @@
 package activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.healthy.R;
 
-import bottomMenuController.Home;
+public class TrainingFromScheduleActivity extends AppCompatActivity {
 
-public class TrainingActivity extends AppCompatActivity {
-
-    TextView mTrainingTitle, mTrainingDescription, mWarningTraining, mStepTraining, mChallengeTraining;
+    TextView mTrainingTitle, mTrainingDescription, mWarningTraining, mStepTraining, mChallengeTraining,mScheduleDate;
     ImageView mImageTrainingOne,mImageTrainingTwo,mImageTrainingThree;
     Bundle extras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
+        setContentView(R.layout.activity_training_schedule);
 
-        mTrainingTitle = findViewById(R.id.trainingTitle);
-        mTrainingDescription = findViewById(R.id.descriptionTraining);
-        mWarningTraining = findViewById(R.id.warningTraining);
-        mStepTraining = findViewById(R.id.stepTraining);
-        mChallengeTraining = findViewById(R.id.challengeTraining);
-        mImageTrainingOne = findViewById(R.id.imageTrainingOne);
-        mImageTrainingTwo = findViewById(R.id.imageTrainingTwo);
-        mImageTrainingThree =findViewById(R.id.imageTrainingThree);
+        mScheduleDate = findViewById(R.id.trainingDate);
+        mTrainingTitle = findViewById(R.id.scheduleTitle);
+        mTrainingDescription = findViewById(R.id.descriptionSchedule);
+        mWarningTraining = findViewById(R.id.warningSchedule);
+        mStepTraining = findViewById(R.id.stepSchedule);
+        mChallengeTraining = findViewById(R.id.challengeSchedule);
+        mImageTrainingOne = findViewById(R.id.imageScheduleOne);
+        mImageTrainingTwo = findViewById(R.id.imageScheduleTwo);
+        mImageTrainingThree =findViewById(R.id.imageScheduleThree);
 
+        String date = "Date not found";
         String trainingTitle = "Title not found";
         String trainingDescription = "Description not found";
         String trainingWarning = "Warning not found";
@@ -43,6 +41,7 @@ public class TrainingActivity extends AppCompatActivity {
         extras = getIntent().getExtras();
 
         if(extras != null){
+            date = extras.getString("trainingDate");
             trainingTitle = extras.getString("trainingTitle");
             trainingDescription = extras.getString("trainingDescription");
             trainingWarning = extras.getString("trainingWarning");
@@ -53,6 +52,7 @@ public class TrainingActivity extends AppCompatActivity {
             image3 = extras.getInt("imageThree");
         }
 
+        mScheduleDate.setText(date);
         mTrainingTitle.setText(trainingTitle);
         mTrainingDescription.setText(trainingDescription);
         mWarningTraining.setText(trainingWarning);
@@ -64,12 +64,6 @@ public class TrainingActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setTitle(trainingTitle);
-    }
-
-    public void addToSchedule(View v){
-        Intent intent = new Intent(getApplicationContext(), ScheduleActivity.class);
-        intent.putExtra("trainingPosition",extras.getInt("trainingPosition"));
-        startActivity(intent);
     }
 
 }

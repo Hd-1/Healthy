@@ -38,8 +38,6 @@ public class Ingredients extends AppCompatActivity {
         setContentView(R.layout.activity_ingredients);
         getSupportActionBar().hide();
 
-        items.add("test");
-
         editItem = findViewById(R.id.editItemIngredients);
         list = findViewById(R.id.myIngredientList);
         list.setLayoutManager(new LinearLayoutManager(this));

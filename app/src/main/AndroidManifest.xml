@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Healthy">
+        <activity android:name="activity.ScheduleActivity"/>
         <activity
             android:name="profileManagement.EditPassword"
-            android:parentActivityName="drawerMenuController.Profile"
-            />
+            android:parentActivityName="drawerMenuController.Profile" />
         <activity
             android:name="profileManagement.EditProfile"
             android:parentActivityName="drawerMenuController.Profile" />
@@ -25,6 +25,9 @@
         <activity
             android:name="activity.DishesActivity"
             android:parentActivityName="bottomMenuController.Start" />
+        <activity
+            android:name="activity.TrainingFromScheduleActivity"
+            android:parentActivityName="drawerMenuController.Schedule"/>
         <activity
             android:name="activity.TrainingActivity"
             android:parentActivityName="bottomMenuController.Start" />

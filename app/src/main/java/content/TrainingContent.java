@@ -92,6 +92,8 @@ public class TrainingContent {
         return trainings;
     }
 
+    public static Training getTrainingByPosition(int position){return trainings.get(position);}
+
     public static void setTrainings(ArrayList<Training> trainings) {
         TrainingContent.trainings = trainings;
     }

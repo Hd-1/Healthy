@@ -1,6 +1,5 @@
 package adapterRecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import java.util.ArrayList;
 
 import com.example.healthy.R;
 
-import content.FavoriteDishesContent;
 import content.FavoriteTrainingContent;
 import data.Training;
 

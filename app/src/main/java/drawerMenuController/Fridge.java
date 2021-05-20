@@ -38,8 +38,6 @@ public class Fridge extends AppCompatActivity {
         setContentView(R.layout.activity_fridge);
         getSupportActionBar().hide();
 
-        items.add("test");
-
         editItem = findViewById(R.id.editItemFridge);
         list = findViewById(R.id.myIngredientList);
         list.setLayoutManager(new LinearLayoutManager(this));
