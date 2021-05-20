@@ -23,12 +23,12 @@ public class EditProfile extends AppCompatActivity {
 
     ImageView profilePicture;
     TextView name, email;
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
 
     String oldN;
     String oldM;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +41,9 @@ public class EditProfile extends AppCompatActivity {
         oldN = name.getText().toString().trim();
         oldM = email.getText().toString().trim();
 
-        name.setText(user.getDisplayName());
-        email.setText(user.getEmail());
-        profilePicture.setImageURI(user.getPhotoUrl());
+        name.setText(fUser.getDisplayName());
+        email.setText(fUser.getEmail());
+        profilePicture.setImageURI(fUser.getPhotoUrl());
 
     }
 
@@ -82,6 +82,7 @@ public class EditProfile extends AppCompatActivity {
                 }
             });
         }
+        finish();
         startActivity(new Intent(getApplicationContext(), Profile.class));
     }
 

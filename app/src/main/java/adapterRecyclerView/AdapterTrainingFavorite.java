@@ -1,7 +1,5 @@
 package adapterRecyclerView;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,32 +43,16 @@ public class AdapterTrainingFavorite extends RecyclerView.Adapter<AdapterTrainin
         holder.favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
-                builder.setTitle("Remove");
-                builder.setMessage("Are you sure you want to remove from favorite?");
-                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Training training = listTraining.get(position);
-                        training.setFavStatus(false);
-                        FavoriteTrainingContent.removeTraining(position);
-                        notifyItemRemoved(position);
-                        holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                        FavoriteTrainingContent.removeTraining(position);
-                        Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                builder.show();
+                Training training = listTraining.get(position);
+                training.setFavStatus(false);
+                FavoriteTrainingContent.removeTraining(position);
+                notifyItemRemoved(position);
+                holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
+    }
 
     @Override
     public int getItemCount() {

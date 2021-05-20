@@ -25,7 +25,7 @@ public class FavoriteDishesFragment extends Fragment  implements AdapterDishesFa
     View dishesView;
     RecyclerView dishesList;
     AdapterDishesFavorite adapterDishes;
-    ArrayList<Dishes> dishes;
+    ArrayList<Dishes> dishes = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

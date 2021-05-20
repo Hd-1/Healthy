@@ -3,8 +3,6 @@ package adapterRecyclerView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,7 @@ import com.example.healthy.R;
 
 import java.util.ArrayList;
 
-import content.FavoriteTrainingContent;
+import content.FavoriteDishesContent;
 import data.Dishes;
 
 public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFavorite.ViewHolder>{
@@ -44,28 +42,12 @@ public class AdapterDishesFavorite  extends RecyclerView.Adapter<AdapterDishesFa
         holder.favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
-                builder.setTitle("Remove");
-                builder.setMessage("Are you sure you want to remove from favorite ?");
-                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Dishes dishes = listDishes.get(position);
-                        dishes.setFavStatus(false);
-                        FavoriteTrainingContent.removeTraining(position);
-                        notifyItemRemoved(position);
-                        holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
-                        FavoriteTrainingContent.removeTraining(position);
-                        Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                builder.show();
+                Dishes dishes = listDishes.get(position);
+                dishes.setFavStatus(false);
+                FavoriteDishesContent.removeDishes(position);
+                notifyItemRemoved(position);
+                holder.favBtn.setBackgroundResource(R.drawable.ic_favorite_uncheck);
+                Toast.makeText(holder.itemView.getContext(), "Remove from Favorite", Toast.LENGTH_SHORT).show();
             }
         });
     }

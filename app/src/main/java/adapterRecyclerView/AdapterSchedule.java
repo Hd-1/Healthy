@@ -1,7 +1,5 @@
 package adapterRecyclerView;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import com.example.healthy.R;
 
 import java.util.ArrayList;
 
-import content.FavoriteTrainingContent;
 import content.ScheduleContent;
 import data.Schedule;
 import data.Training;
@@ -49,25 +46,9 @@ public class AdapterSchedule extends RecyclerView.Adapter<AdapterSchedule.ViewHo
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.itemView.getContext());
-                builder.setTitle("Remove");
-                builder.setMessage("Are you sure you want to remove from favorite?");
-                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                            list.remove(position);
-                            notifyItemRemoved(position);
-                            ScheduleContent.removeSchedule(position);
-                            Toast.makeText(holder.itemView.getContext(), "Remove", Toast.LENGTH_SHORT).show();
-                        }
-                });
-                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                builder.show();
+                ScheduleContent.removeSchedule(position);
+                notifyItemRemoved(position);
+                Toast.makeText(holder.itemView.getContext(), "Remove", Toast.LENGTH_SHORT).show();
             }
         });
     }

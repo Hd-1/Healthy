@@ -49,10 +49,12 @@ public class Profile extends AppCompatActivity {
     }
 
     public void editProfile(View v){
+        finish();
         startActivity(new Intent(getApplicationContext(), EditProfile.class));
     }
 
     public void resetPassword(View v){
+        finish();
         startActivity(new Intent(getApplicationContext(), EditPassword.class));
     }
 

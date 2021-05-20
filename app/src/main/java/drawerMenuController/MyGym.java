@@ -50,7 +50,7 @@ public class MyGym extends AppCompatActivity {
     public void addItemToMyGym(View v){
         String item;
         item = editItem.getText().toString().trim();
-        if(item.isEmpty()){
+        if(!item.isEmpty()){
             items.add(item);
             editItem.setText("");
             adapter.notifyDataSetChanged();

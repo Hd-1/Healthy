@@ -53,6 +53,7 @@ public class EditPassword extends AppCompatActivity {
                         fUser.updatePassword(newPassword.getText().toString().trim()).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
+                                finish();
                                 startActivity(new Intent(getApplicationContext(), Profile.class));
                                 Toast.makeText(EditPassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
                             }
